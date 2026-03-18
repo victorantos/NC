@@ -63,6 +63,10 @@ Then open `http://localhost:8000` in your browser.
 
 Requires a modern browser with ES modules and the Origin Private File System API. Native filesystem access (the "Open Left/Right" buttons) additionally requires the File System Access API (Chromium-based browsers).
 
+## Blog Post
+
+Read the story behind this project: [I Saw Norton Commander on X and Nostalgia Made Me Build It for the Web](https://victorantos.com/posts/i-saw-norton-commander-on-x-and-nostalgia-made-me-build-it-for-the-web/)
+
 ## License
 
 [GPL-3.0](LICENSE)
