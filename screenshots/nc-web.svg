@@ -1,0 +1,212 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&amp;display=swap');
+      text { font-family: 'JetBrains Mono', 'Consolas', 'Courier New', monospace; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="560" fill="#0000AA"/>
+
+  <!-- Top Toolbar -->
+  <rect x="0" y="0" width="900" height="30" fill="#000000"/>
+  <text x="12" y="20" fill="#FFFFFF" font-size="13" font-weight="bold">NC Web</text>
+  <text x="680" y="20" fill="#AAAAAA" font-size="12">Open Left...</text>
+  <text x="790" y="20" fill="#AAAAAA" font-size="12">Open Right...</text>
+
+  <!-- Left Panel Border -->
+  <rect x="4" y="34" width="443" height="460" fill="none" stroke="#00AAAA" stroke-width="1"/>
+
+  <!-- Left Panel Breadcrumb -->
+  <rect x="5" y="35" width="441" height="22" fill="#0000AA"/>
+  <text x="14" y="50" fill="#FFFF55" font-size="12" font-weight="bold">Virtual FS / projects</text>
+
+  <!-- Left Panel Column Headers -->
+  <rect x="5" y="57" width="441" height="20" fill="#00AAAA"/>
+  <text x="14" y="71" fill="#000000" font-size="12" font-weight="bold">Name</text>
+  <text x="220" y="71" fill="#000000" font-size="12" font-weight="bold">Ext</text>
+  <text x="280" y="71" fill="#000000" font-size="12" font-weight="bold">Size</text>
+  <text x="370" y="71" fill="#000000" font-size="12" font-weight="bold">Date</text>
+
+  <!-- Left Panel File Entries -->
+  <!-- .. (parent) -->
+  <text x="14" y="92" fill="#FFFFFF" font-size="12">..</text>
+  <text x="280" y="92" fill="#FFFFFF" font-size="12">&lt;DIR&gt;</text>
+
+  <!-- Cursor highlight on "documents" -->
+  <rect x="6" y="96" width="440" height="18" fill="#00AAAA"/>
+  <text x="14" y="110" fill="#000000" font-size="12" font-weight="bold">documents</text>
+  <text x="280" y="110" fill="#000000" font-size="12">&lt;DIR&gt;</text>
+  <text x="370" y="110" fill="#000000" font-size="12">2026-03-15</text>
+
+  <!-- music dir -->
+  <text x="14" y="128" fill="#FFFFFF" font-size="12">music</text>
+  <text x="280" y="128" fill="#FFFFFF" font-size="12">&lt;DIR&gt;</text>
+  <text x="370" y="128" fill="#AAAAAA" font-size="12">2026-03-10</text>
+
+  <!-- photos dir -->
+  <text x="14" y="146" fill="#FFFFFF" font-size="12">photos</text>
+  <text x="280" y="146" fill="#FFFFFF" font-size="12">&lt;DIR&gt;</text>
+  <text x="370" y="146" fill="#AAAAAA" font-size="12">2026-02-28</text>
+
+  <!-- src dir -->
+  <text x="14" y="164" fill="#FFFFFF" font-size="12">src</text>
+  <text x="280" y="164" fill="#FFFFFF" font-size="12">&lt;DIR&gt;</text>
+  <text x="370" y="164" fill="#AAAAAA" font-size="12">2026-03-17</text>
+
+  <!-- Selected file (yellow) -->
+  <text x="14" y="182" fill="#FFFF55" font-size="12">backup</text>
+  <text x="220" y="182" fill="#FFFF55" font-size="12">tar.gz</text>
+  <text x="280" y="182" fill="#FFFF55" font-size="12">2.4 MB</text>
+  <text x="370" y="182" fill="#FFFF55" font-size="12">2026-03-12</text>
+
+  <!-- config.json -->
+  <text x="14" y="200" fill="#00FF00" font-size="12">config</text>
+  <text x="220" y="200" fill="#00FF00" font-size="12">json</text>
+  <text x="280" y="200" fill="#00FF00" font-size="12">1.2 KB</text>
+  <text x="370" y="200" fill="#AAAAAA" font-size="12">2026-03-14</text>
+
+  <!-- index.html -->
+  <text x="14" y="218" fill="#00FF00" font-size="12">index</text>
+  <text x="220" y="218" fill="#00FF00" font-size="12">html</text>
+  <text x="280" y="218" fill="#00FF00" font-size="12">4.8 KB</text>
+  <text x="370" y="218" fill="#AAAAAA" font-size="12">2026-03-16</text>
+
+  <!-- notes.md -->
+  <text x="14" y="236" fill="#00FF00" font-size="12">notes</text>
+  <text x="220" y="236" fill="#00FF00" font-size="12">md</text>
+  <text x="280" y="236" fill="#00FF00" font-size="12">856 B</text>
+  <text x="370" y="236" fill="#AAAAAA" font-size="12">2026-03-11</text>
+
+  <!-- readme.txt -->
+  <text x="14" y="254" fill="#00FF00" font-size="12">readme</text>
+  <text x="220" y="254" fill="#00FF00" font-size="12">txt</text>
+  <text x="280" y="254" fill="#00FF00" font-size="12">2.1 KB</text>
+  <text x="370" y="254" fill="#AAAAAA" font-size="12">2026-03-09</text>
+
+  <!-- Selected file (yellow) -->
+  <text x="14" y="272" fill="#FFFF55" font-size="12">setup</text>
+  <text x="220" y="272" fill="#FFFF55" font-size="12">sh</text>
+  <text x="280" y="272" fill="#FFFF55" font-size="12">512 B</text>
+  <text x="370" y="272" fill="#FFFF55" font-size="12">2026-03-08</text>
+
+  <!-- style.css -->
+  <text x="14" y="290" fill="#00FF00" font-size="12">style</text>
+  <text x="220" y="290" fill="#00FF00" font-size="12">css</text>
+  <text x="280" y="290" fill="#00FF00" font-size="12">3.4 KB</text>
+  <text x="370" y="290" fill="#AAAAAA" font-size="12">2026-03-13</text>
+
+  <!-- Right Panel Border -->
+  <rect x="453" y="34" width="443" height="460" fill="none" stroke="#00AAAA" stroke-width="1"/>
+
+  <!-- Right Panel Breadcrumb -->
+  <rect x="454" y="35" width="441" height="22" fill="#0000AA"/>
+  <text x="463" y="50" fill="#00AAAA" font-size="12">Virtual FS / projects / src</text>
+
+  <!-- Right Panel Column Headers -->
+  <rect x="454" y="57" width="441" height="20" fill="#0000AA"/>
+  <text x="463" y="71" fill="#AAAAAA" font-size="12" font-weight="bold">Name</text>
+  <text x="669" y="71" fill="#AAAAAA" font-size="12" font-weight="bold">Ext</text>
+  <text x="729" y="71" fill="#AAAAAA" font-size="12" font-weight="bold">Size</text>
+  <text x="819" y="71" fill="#AAAAAA" font-size="12" font-weight="bold">Date</text>
+
+  <!-- Right Panel File Entries -->
+  <text x="463" y="92" fill="#FFFFFF" font-size="12">..</text>
+  <text x="729" y="92" fill="#FFFFFF" font-size="12">&lt;DIR&gt;</text>
+
+  <!-- components dir -->
+  <text x="463" y="110" fill="#FFFFFF" font-size="12">components</text>
+  <text x="729" y="110" fill="#FFFFFF" font-size="12">&lt;DIR&gt;</text>
+  <text x="819" y="110" fill="#AAAAAA" font-size="12">2026-03-16</text>
+
+  <!-- hooks dir -->
+  <text x="463" y="128" fill="#FFFFFF" font-size="12">hooks</text>
+  <text x="729" y="128" fill="#FFFFFF" font-size="12">&lt;DIR&gt;</text>
+  <text x="819" y="128" fill="#AAAAAA" font-size="12">2026-03-14</text>
+
+  <!-- utils dir -->
+  <text x="463" y="146" fill="#FFFFFF" font-size="12">utils</text>
+  <text x="729" y="146" fill="#FFFFFF" font-size="12">&lt;DIR&gt;</text>
+  <text x="819" y="146" fill="#AAAAAA" font-size="12">2026-03-15</text>
+
+  <!-- Cursor on app.js -->
+  <rect x="455" y="150" width="440" height="18" fill="#00AAAA"/>
+  <text x="463" y="164" fill="#000000" font-size="12" font-weight="bold">app</text>
+  <text x="669" y="164" fill="#000000" font-size="12">js</text>
+  <text x="729" y="164" fill="#000000" font-size="12">8.2 KB</text>
+  <text x="819" y="164" fill="#000000" font-size="12">2026-03-17</text>
+
+  <!-- index.ts -->
+  <text x="463" y="182" fill="#00FF00" font-size="12">index</text>
+  <text x="669" y="182" fill="#00FF00" font-size="12">ts</text>
+  <text x="729" y="182" fill="#00FF00" font-size="12">1.5 KB</text>
+  <text x="819" y="182" fill="#AAAAAA" font-size="12">2026-03-17</text>
+
+  <!-- main.css -->
+  <text x="463" y="200" fill="#00FF00" font-size="12">main</text>
+  <text x="669" y="200" fill="#00FF00" font-size="12">css</text>
+  <text x="729" y="200" fill="#00FF00" font-size="12">5.6 KB</text>
+  <text x="819" y="200" fill="#AAAAAA" font-size="12">2026-03-16</text>
+
+  <!-- router.js -->
+  <text x="463" y="218" fill="#00FF00" font-size="12">router</text>
+  <text x="669" y="218" fill="#00FF00" font-size="12">js</text>
+  <text x="729" y="218" fill="#00FF00" font-size="12">3.1 KB</text>
+  <text x="819" y="218" fill="#AAAAAA" font-size="12">2026-03-15</text>
+
+  <!-- store.js -->
+  <text x="463" y="236" fill="#00FF00" font-size="12">store</text>
+  <text x="669" y="236" fill="#00FF00" font-size="12">js</text>
+  <text x="729" y="236" fill="#00FF00" font-size="12">2.8 KB</text>
+  <text x="819" y="236" fill="#AAAAAA" font-size="12">2026-03-14</text>
+
+  <!-- tsconfig.json -->
+  <text x="463" y="254" fill="#00FF00" font-size="12">tsconfig</text>
+  <text x="669" y="254" fill="#00FF00" font-size="12">json</text>
+  <text x="729" y="254" fill="#00FF00" font-size="12">428 B</text>
+  <text x="819" y="254" fill="#AAAAAA" font-size="12">2026-03-10</text>
+
+  <!-- Status Bar -->
+  <rect x="0" y="498" width="900" height="24" fill="#0000AA"/>
+  <rect x="0" y="498" width="900" height="24" fill="none" stroke="#00AAAA" stroke-width="1"/>
+  <text x="14" y="514" fill="#AAAAAA" font-size="11">4 dirs  7 files  10.3 KB  2 selected</text>
+  <text x="750" y="514" fill="#AAAAAA" font-size="11">OPFS  Left</text>
+
+  <!-- F-Key Toolbar -->
+  <rect x="0" y="526" width="900" height="34" fill="#000000"/>
+
+  <!-- F1 -->
+  <text x="14" y="548" fill="#FFFF55" font-size="12" font-weight="bold">1</text>
+  <text x="26" y="548" fill="#FFFFFF" font-size="12">Help</text>
+  <!-- F2 -->
+  <text x="95" y="548" fill="#FFFF55" font-size="12" font-weight="bold">2</text>
+  <text x="107" y="548" fill="#FFFFFF" font-size="12">Rename</text>
+  <!-- F3 -->
+  <text x="190" y="548" fill="#FFFF55" font-size="12" font-weight="bold">3</text>
+  <text x="202" y="548" fill="#FFFFFF" font-size="12">View</text>
+  <!-- F4 -->
+  <text x="270" y="548" fill="#FFFF55" font-size="12" font-weight="bold">4</text>
+  <text x="282" y="548" fill="#FFFFFF" font-size="12">Edit</text>
+  <!-- F5 -->
+  <text x="345" y="548" fill="#FFFF55" font-size="12" font-weight="bold">5</text>
+  <text x="357" y="548" fill="#FFFFFF" font-size="12">Copy</text>
+  <!-- F6 -->
+  <text x="425" y="548" fill="#FFFF55" font-size="12" font-weight="bold">6</text>
+  <text x="437" y="548" fill="#FFFFFF" font-size="12">Move</text>
+  <!-- F7 -->
+  <text x="505" y="548" fill="#FFFF55" font-size="12" font-weight="bold">7</text>
+  <text x="517" y="548" fill="#FFFFFF" font-size="12">MkDir</text>
+  <!-- F8 -->
+  <text x="590" y="548" fill="#FFFF55" font-size="12" font-weight="bold">8</text>
+  <text x="602" y="548" fill="#FFFFFF" font-size="12">Delete</text>
+  <!-- F9 -->
+  <text x="680" y="548" fill="#FFFF55" font-size="12" font-weight="bold">9</text>
+  <text x="692" y="548" fill="#FFFFFF" font-size="12">Menu</text>
+  <!-- F10 -->
+  <text x="762" y="548" fill="#FFFF55" font-size="12" font-weight="bold">10</text>
+  <text x="780" y="548" fill="#FFFFFF" font-size="12">Quit</text>
+
+  <!-- Active panel indicator (left panel has brighter border) -->
+  <rect x="4" y="34" width="443" height="460" fill="none" stroke="#00FFFF" stroke-width="2"/>
+</svg>
