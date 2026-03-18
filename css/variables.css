@@ -1,0 +1,56 @@
+/* =========================================================
+   variables.css — NC Web custom properties (Norton Commander theme)
+   ========================================================= */
+
+:root {
+  /* ── Core palette ────────────────────────────────────── */
+  --nc-bg:            #0000AA;
+  --nc-bg-light:      #0000CC;
+  --nc-border:        #00AAAA;
+  --nc-text:          #AAAAAA;
+  --nc-text-bright:   #FFFFFF;
+  --nc-highlight:     #FFFF55;
+
+  /* ── Selection / cursor ──────────────────────────────── */
+  --nc-select-bg:     #00AAAA;
+  --nc-select-text:   #000000;
+  --nc-cursor-bg:     #00AAAA;
+  --nc-cursor-text:   #000000;
+
+  /* ── File type colours ───────────────────────────────── */
+  --nc-dir-color:     #FFFFFF;
+  --nc-file-color:    #00FF00;
+  --nc-exe-color:     #00FF00;
+
+  /* ── Regions ─────────────────────────────────────────── */
+  --nc-header-bg:     #0000AA;
+  --nc-toolbar-bg:    #000000;
+  --nc-toolbar-text:  #FFFFFF;
+  --nc-toolbar-key:   #FFFF55;
+
+  /* ── Dialog ──────────────────────────────────────────── */
+  --nc-dialog-bg:     #0000AA;
+  --nc-dialog-border: #00AAAA;
+
+  /* ── Editor ──────────────────────────────────────────── */
+  --nc-editor-bg:     #000044;
+
+  /* ── Misc ────────────────────────────────────────────── */
+  --nc-scrollbar:     #00AAAA;
+  --nc-error:         #FF5555;
+
+  /* ── Typography ──────────────────────────────────────── */
+  --nc-font:          'Consolas', 'Courier New', 'Liberation Mono', monospace;
+  --nc-font-size:     14px;
+  --nc-line-height:   1.4;
+
+  /* ── Spacing / sizing ────────────────────────────────── */
+  --nc-panel-gap:     2px;
+  --nc-padding:       4px;
+  --nc-border-width:  1px;
+  --nc-radius:        0px;
+  --nc-transition:    200ms ease;
+  --nc-toolbar-height:   32px;
+  --nc-header-height:    28px;
+  --nc-breadcrumb-height: 24px;
+}

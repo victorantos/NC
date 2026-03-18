@@ -1,0 +1,194 @@
+/* =========================================================
+   editor.css — Editor / Viewer overlay styles
+   ========================================================= */
+
+/* ── Header bar ────────────────────────────────────────── */
+
+.editor-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 8px;
+  background: var(--nc-toolbar-bg);
+  border-bottom: var(--nc-border-width) solid var(--nc-border);
+  height: var(--nc-header-height);
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.editor-filename {
+  color: var(--nc-highlight);
+  font-weight: bold;
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
+}
+
+.editor-info {
+  color: var(--nc-text);
+  font-size: 12px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.editor-actions {
+  display: flex;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.btn-editor {
+  padding: 2px 10px;
+  border: var(--nc-border-width) solid var(--nc-border);
+  color: var(--nc-text-bright);
+  background: transparent;
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: var(--nc-radius);
+  transition: background var(--nc-transition), color var(--nc-transition);
+}
+
+.btn-editor:hover {
+  background: var(--nc-border);
+  color: var(--nc-select-text);
+}
+
+.btn-editor:active {
+  background: var(--nc-highlight);
+  color: #000;
+}
+
+/* ── Content area ──────────────────────────────────────── */
+
+.editor-content {
+  flex: 1;
+  overflow: auto;
+  min-height: 0;
+  position: relative;
+  display: flex;
+}
+
+/* ── Viewer (read-only, F3) ────────────────────────────── */
+
+pre.viewer {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  padding: 8px 12px;
+  color: var(--nc-text-bright);
+  font-family: var(--nc-font);
+  font-size: var(--nc-font-size);
+  line-height: var(--nc-line-height);
+  user-select: text;
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  background: transparent;
+  tab-size: 4;
+  -moz-tab-size: 4;
+}
+
+/* ── Editor (editable, F4) ─────────────────────────────── */
+
+textarea.editor-textarea {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  color: var(--nc-text-bright);
+  border: none;
+  outline: none;
+  resize: none;
+  padding: 8px 12px;
+  font-family: var(--nc-font);
+  font-size: var(--nc-font-size);
+  line-height: var(--nc-line-height);
+  tab-size: 4;
+  -moz-tab-size: 4;
+  white-space: pre;
+  overflow: auto;
+}
+
+textarea.editor-textarea::placeholder {
+  color: var(--nc-text);
+}
+
+/* ── Line numbers gutter (optional enhancement) ────────── */
+
+.editor-with-gutter {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.line-numbers {
+  padding: 8px 8px 8px 4px;
+  text-align: right;
+  color: var(--nc-text);
+  font-family: var(--nc-font);
+  font-size: var(--nc-font-size);
+  line-height: var(--nc-line-height);
+  user-select: none;
+  border-right: var(--nc-border-width) solid var(--nc-border);
+  background: rgba(0, 0, 0, 0.2);
+  min-width: 40px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.line-numbers span {
+  display: block;
+}
+
+/* ── Editor toolbar (save bar) ─────────────────────────── */
+
+.editor-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  padding: 4px 8px;
+  background: var(--nc-toolbar-bg);
+  border-top: var(--nc-border-width) solid var(--nc-border);
+  flex-shrink: 0;
+}
+
+.editor-toolbar .editor-status {
+  flex: 1;
+  color: var(--nc-text);
+  font-size: 12px;
+}
+
+/* ── Image / binary preview ────────────────────────────── */
+
+.viewer-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  padding: 16px;
+}
+
+.viewer-image img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  image-rendering: auto;
+}
+
+.viewer-binary {
+  padding: 16px;
+  color: var(--nc-text);
+  text-align: center;
+  font-size: 14px;
+}
+
+/* ── Modified indicator ────────────────────────────────── */
+
+.editor-filename.modified::after {
+  content: " [modified]";
+  color: var(--nc-error);
+  font-weight: normal;
+  font-size: 11px;
+}

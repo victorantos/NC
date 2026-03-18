@@ -1,0 +1,135 @@
+/* =========================================================
+   mobile.css — Responsive / touch-friendly overrides
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  /* ── Single-column panels ──────────────────────────── */
+  .panels-container {
+    grid-template-columns: 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .panel {
+    position: absolute;
+    inset: 0;
+    transition: transform var(--nc-transition);
+  }
+
+  .panel.panel-left {
+    transform: translateX(0);
+  }
+
+  .panel.panel-right {
+    transform: translateX(100%);
+  }
+
+  .panel.panel-right.active-mobile {
+    transform: translateX(0);
+  }
+
+  .panel.panel-left.inactive-mobile {
+    transform: translateX(-100%);
+  }
+
+  /* ── Show mobile tab switcher ──────────────────────── */
+  .mobile-tabs {
+    display: flex !important;
+  }
+
+  /* ── Touch-friendly tap targets ────────────────────── */
+  .file-entry {
+    min-height: 40px;
+    align-items: center;
+    padding: 4px var(--nc-padding);
+  }
+
+  .toolbar-btn {
+    min-height: 44px;
+  }
+
+  .btn-top {
+    min-height: 36px;
+    padding: 4px 10px;
+  }
+
+  .mobile-tab {
+    min-height: 44px;
+  }
+
+  .context-menu-item {
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+  }
+
+  .dialog-buttons button {
+    min-height: 40px;
+    padding: 8px 24px;
+  }
+
+  /* ── Breadcrumb ────────────────────────────────────── */
+  .breadcrumb {
+    font-size: 11px;
+    max-width: 100%;
+    overflow: hidden;
+  }
+
+  .breadcrumb .breadcrumb-segment {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* ── Toolbar adjustments ───────────────────────────── */
+  .toolbar-btn .btn-label {
+    font-size: 10px;
+  }
+
+  .btn-key {
+    font-size: 11px;
+  }
+}
+
+/* ── Very narrow: hide text labels ───────────────────── */
+
+@media (max-width: 500px) {
+  .btn-top .btn-label {
+    display: none;
+  }
+
+  .btn-top {
+    padding: 4px 8px;
+  }
+
+  .toolbar-top-title {
+    font-size: 12px;
+  }
+}
+
+/* ── Extra narrow: hide date column ──────────────────── */
+
+@media (max-width: 400px) {
+  .file-list-header {
+    grid-template-columns: 1fr 50px 70px;
+  }
+
+  .file-entry {
+    grid-template-columns: 1fr 50px 70px;
+  }
+
+  .col-date,
+  .file-entry .file-date {
+    display: none;
+  }
+
+  .toolbar-btn .btn-label {
+    display: none;
+  }
+
+  .btn-key {
+    font-size: 12px;
+  }
+}

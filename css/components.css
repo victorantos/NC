@@ -1,0 +1,523 @@
+/* =========================================================
+   components.css — All NC Web UI components
+   ========================================================= */
+
+/* ── Utility ───────────────────────────────────────────── */
+
+.hidden {
+  display: none !important;
+}
+
+/* ─────────────────────────────────────────────────────────
+   TOP TOOLBAR
+   ───────────────────────────────────────────────────────── */
+
+.toolbar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--nc-toolbar-bg);
+  padding: 2px 8px;
+  height: var(--nc-header-height);
+  border-bottom: var(--nc-border-width) solid var(--nc-border);
+  user-select: none;
+}
+
+.toolbar-top-title {
+  color: var(--nc-highlight);
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.toolbar-top-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.btn-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border: var(--nc-border-width) solid var(--nc-border);
+  color: var(--nc-text-bright);
+  background: transparent;
+  cursor: pointer;
+  font-size: 12px;
+  border-radius: var(--nc-radius);
+  transition: background var(--nc-transition), color var(--nc-transition);
+}
+
+.btn-top:hover {
+  background: var(--nc-border);
+  color: var(--nc-select-text);
+}
+
+.btn-top:active {
+  background: var(--nc-highlight);
+  color: #000;
+}
+
+.btn-top .btn-icon {
+  font-size: 13px;
+}
+
+/* ─────────────────────────────────────────────────────────
+   BREADCRUMB
+   ───────────────────────────────────────────────────────── */
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: var(--nc-breadcrumb-height);
+  padding: 0 var(--nc-padding);
+  background: var(--nc-bg-light);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  color: var(--nc-text);
+  user-select: none;
+  border-bottom: var(--nc-border-width) solid var(--nc-border);
+}
+
+.breadcrumb .breadcrumb-segment {
+  cursor: pointer;
+  color: var(--nc-highlight);
+  padding: 1px 3px;
+  border-radius: var(--nc-radius);
+  flex-shrink: 0;
+}
+
+.breadcrumb .breadcrumb-segment:hover {
+  background: var(--nc-border);
+  color: var(--nc-select-text);
+}
+
+.breadcrumb .breadcrumb-separator {
+  color: var(--nc-text);
+  flex-shrink: 0;
+}
+
+/* ─────────────────────────────────────────────────────────
+   FILE LIST HEADER
+   ───────────────────────────────────────────────────────── */
+
+.file-list-header {
+  display: grid;
+  grid-template-columns: 1fr 60px 80px 130px;
+  padding: 1px var(--nc-padding);
+  background: var(--nc-bg-light);
+  border-bottom: var(--nc-border-width) solid var(--nc-border);
+  user-select: none;
+}
+
+.col-header {
+  cursor: pointer;
+  color: var(--nc-highlight);
+  font-weight: bold;
+  font-size: 12px;
+  padding: 2px 4px;
+  position: relative;
+  white-space: nowrap;
+}
+
+.col-header:hover {
+  color: var(--nc-text-bright);
+}
+
+/* Sort direction indicators */
+.col-header.sort-asc::after {
+  content: " \25B2"; /* ▲ */
+  font-size: 9px;
+}
+
+.col-header.sort-desc::after {
+  content: " \25BC"; /* ▼ */
+  font-size: 9px;
+}
+
+.col-size,
+.col-date {
+  text-align: right;
+}
+
+/* ─────────────────────────────────────────────────────────
+   FILE LIST ROWS
+   ───────────────────────────────────────────────────────── */
+
+.file-entry {
+  display: grid;
+  grid-template-columns: 1fr 60px 80px 130px;
+  padding: 1px var(--nc-padding);
+  cursor: pointer;
+  user-select: none;
+  border-radius: var(--nc-radius);
+  transition: background-color 60ms ease;
+}
+
+.file-entry:hover {
+  background: rgba(0, 170, 170, 0.15);
+}
+
+/* Cursor (active/focused row) */
+.file-entry.cursor {
+  background: var(--nc-cursor-bg);
+  color: var(--nc-cursor-text);
+}
+
+.file-entry.cursor .file-name,
+.file-entry.cursor .file-ext,
+.file-entry.cursor .file-size,
+.file-entry.cursor .file-date {
+  color: var(--nc-cursor-text);
+}
+
+/* Multi-selected */
+.file-entry.selected {
+  color: var(--nc-highlight);
+}
+
+.file-entry.selected .file-name,
+.file-entry.selected .file-ext {
+  color: var(--nc-highlight);
+}
+
+/* Selected AND cursor */
+.file-entry.selected.cursor {
+  background: var(--nc-cursor-bg);
+  color: var(--nc-highlight);
+}
+
+.file-entry.selected.cursor .file-name,
+.file-entry.selected.cursor .file-ext {
+  color: var(--nc-highlight);
+}
+
+/* ── Column cells ──────────────────────────────────────── */
+
+.file-entry .file-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding-right: 4px;
+}
+
+.file-entry .file-ext {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.file-entry .file-size {
+  text-align: right;
+  color: var(--nc-text);
+  white-space: nowrap;
+}
+
+.file-entry .file-date {
+  text-align: right;
+  color: var(--nc-text);
+  white-space: nowrap;
+  font-size: 12px;
+}
+
+/* ── File type styles ──────────────────────────────────── */
+
+.file-entry.directory .file-name {
+  color: var(--nc-dir-color);
+  font-weight: bold;
+}
+
+.file-entry.file .file-name {
+  color: var(--nc-file-color);
+}
+
+.file-entry.executable .file-name {
+  color: var(--nc-exe-color);
+}
+
+.file-entry.parent-dir {
+  font-style: italic;
+}
+
+.file-entry.parent-dir .file-name {
+  color: var(--nc-dir-color);
+  font-weight: bold;
+}
+
+/* ─────────────────────────────────────────────────────────
+   PANEL STATES
+   ───────────────────────────────────────────────────────── */
+
+.panel.active-panel {
+  border-color: var(--nc-highlight);
+}
+
+.panel.inactive {
+  opacity: 0.85;
+}
+
+/* ─────────────────────────────────────────────────────────
+   BOTTOM F-KEY TOOLBAR
+   ───────────────────────────────────────────────────────── */
+
+.toolbar {
+  display: flex;
+  flex-direction: row;
+  background: var(--nc-toolbar-bg);
+  height: var(--nc-toolbar-height);
+  user-select: none;
+}
+
+.toolbar-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  border: none;
+  border-right: var(--nc-border-width) solid #333;
+  background: transparent;
+  cursor: pointer;
+  padding: 0 2px;
+  font-family: var(--nc-font);
+  transition: background var(--nc-transition);
+  white-space: nowrap;
+  min-width: 0;
+}
+
+.toolbar-btn:last-child {
+  border-right: none;
+}
+
+.toolbar-btn:hover {
+  background: #222;
+}
+
+.toolbar-btn:active {
+  background: var(--nc-border);
+}
+
+.btn-key {
+  color: var(--nc-toolbar-key);
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.btn-label {
+  color: var(--nc-toolbar-text);
+  font-size: 12px;
+}
+
+/* ─────────────────────────────────────────────────────────
+   STATUS BAR
+   ───────────────────────────────────────────────────────── */
+
+.status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 8px;
+  background: var(--nc-toolbar-bg);
+  color: var(--nc-text);
+  font-size: 12px;
+  height: 22px;
+  border-top: var(--nc-border-width) solid #333;
+  user-select: none;
+}
+
+.status-center {
+  flex: 1;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 8px;
+}
+
+/* ─────────────────────────────────────────────────────────
+   DIALOG OVERLAY
+   ───────────────────────────────────────────────────────── */
+
+.dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 900;
+}
+
+.dialog {
+  background: var(--nc-dialog-bg);
+  border: 2px solid var(--nc-dialog-border);
+  border-radius: var(--nc-radius);
+  min-width: 300px;
+  max-width: 500px;
+  width: 90%;
+  padding: 0;
+  box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.5);
+}
+
+.dialog-title {
+  background: var(--nc-dialog-border);
+  color: var(--nc-select-text);
+  padding: 4px 10px;
+  font-weight: bold;
+  font-size: 13px;
+  text-align: center;
+  user-select: none;
+}
+
+.dialog-body {
+  padding: 12px 16px;
+  color: var(--nc-text-bright);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.dialog-body input[type="text"],
+.dialog-body textarea {
+  width: 100%;
+  background: #000033;
+  color: var(--nc-text-bright);
+  border: var(--nc-border-width) solid var(--nc-border);
+  padding: 4px 6px;
+  margin-top: 6px;
+  font-family: var(--nc-font);
+  font-size: var(--nc-font-size);
+  border-radius: var(--nc-radius);
+}
+
+.dialog-body input[type="text"]:focus,
+.dialog-body textarea:focus {
+  border-color: var(--nc-highlight);
+  outline: none;
+}
+
+.dialog-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 16px 12px;
+}
+
+.dialog-buttons button {
+  padding: 4px 20px;
+  border: var(--nc-border-width) solid var(--nc-border);
+  color: var(--nc-text-bright);
+  background: var(--nc-bg);
+  cursor: pointer;
+  font-size: 13px;
+  border-radius: var(--nc-radius);
+  transition: background var(--nc-transition), color var(--nc-transition);
+}
+
+.dialog-buttons button:hover {
+  background: var(--nc-border);
+  color: var(--nc-select-text);
+}
+
+.dialog-buttons button:active {
+  background: var(--nc-highlight);
+  color: #000;
+}
+
+.dialog-buttons button.btn-primary {
+  background: var(--nc-border);
+  color: var(--nc-select-text);
+  font-weight: bold;
+}
+
+.dialog-buttons button.btn-primary:hover {
+  background: var(--nc-highlight);
+  color: #000;
+}
+
+/* ─────────────────────────────────────────────────────────
+   EDITOR OVERLAY
+   ───────────────────────────────────────────────────────── */
+
+.editor-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--nc-editor-bg);
+  display: flex;
+  flex-direction: column;
+  z-index: 800;
+}
+
+/* ─────────────────────────────────────────────────────────
+   CONTEXT MENU
+   ───────────────────────────────────────────────────────── */
+
+.context-menu {
+  position: fixed;
+  background: var(--nc-dialog-bg);
+  border: var(--nc-border-width) solid var(--nc-dialog-border);
+  border-radius: var(--nc-radius);
+  min-width: 150px;
+  z-index: 1000;
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5);
+  padding: 2px 0;
+  user-select: none;
+}
+
+.context-menu-item {
+  padding: 4px 12px;
+  cursor: pointer;
+  color: var(--nc-text-bright);
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.context-menu-item:hover {
+  background: var(--nc-cursor-bg);
+  color: var(--nc-cursor-text);
+}
+
+.context-menu-item.disabled {
+  color: var(--nc-text);
+  cursor: default;
+}
+
+.context-menu-item.disabled:hover {
+  background: transparent;
+  color: var(--nc-text);
+}
+
+.context-menu-separator {
+  height: 1px;
+  background: var(--nc-border);
+  margin: 2px 4px;
+}
+
+/* ─────────────────────────────────────────────────────────
+   MOBILE TAB SWITCHER
+   ───────────────────────────────────────────────────────── */
+
+.mobile-tab {
+  flex: 1;
+  padding: 8px;
+  background: var(--nc-toolbar-bg);
+  color: var(--nc-text);
+  border: var(--nc-border-width) solid #333;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+  transition: background var(--nc-transition), color var(--nc-transition);
+}
+
+.mobile-tab.active {
+  background: var(--nc-border);
+  color: var(--nc-select-text);
+}
+
+.mobile-tab:not(.active):hover {
+  background: #222;
+}

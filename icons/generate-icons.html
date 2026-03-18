@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html><head><title>Generate NC Icons</title></head>
+<body style="background:#333;color:#fff;font-family:monospace;padding:20px">
+<h2>NC Web Icon Generator</h2>
+<p>Click each button to generate and download the PNG icons.</p>
+<button onclick="generate(192)">Download icon-192.png</button>
+<button onclick="generate(512)">Download icon-512.png</button>
+<br><br>
+<canvas id="preview" width="512" height="512" style="border:1px solid #666"></canvas>
+<script>
+function generate(size) {
+  const canvas = document.createElement('canvas');
+  canvas.width = size;
+  canvas.height = size;
+  const ctx = canvas.getContext('2d');
+
+  // Background
+  ctx.fillStyle = '#0000AA';
+  ctx.fillRect(0, 0, size, size);
+
+  // Border
+  const bw = Math.round(size * 0.03);
+  ctx.strokeStyle = '#00AAAA';
+  ctx.lineWidth = bw;
+  ctx.strokeRect(bw/2, bw/2, size - bw, size - bw);
+
+  // Text "NC"
+  const fontSize = Math.round(size * 0.42);
+  ctx.font = `bold ${fontSize}px Consolas, "Courier New", monospace`;
+  ctx.fillStyle = '#00AAAA';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText('NC', size/2, size/2 + size*0.03);
+
+  // Preview
+  if (size === 512) {
+    const preview = document.getElementById('preview');
+    const pctx = preview.getContext('2d');
+    pctx.clearRect(0, 0, 512, 512);
+    pctx.drawImage(canvas, 0, 0);
+  }
+
+  // Download
+  const link = document.createElement('a');
+  link.download = `icon-${size}.png`;
+  link.href = canvas.toDataURL('image/png');
+  link.click();
+}
+// Auto-preview
+window.onload = () => generate(512);
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "NC Web — Norton Commander",
+  "short_name": "NC Web",
+  "description": "Modern Norton Commander dual-pane file manager",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#0000AA",
+  "theme_color": "#0000AA",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}

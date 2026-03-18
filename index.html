@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#0000AA">
+  <meta name="description" content="NC Web — A modern Norton Commander dual-pane file manager">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>NC Web</title>
+
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
+  <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/editor.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/mobile.css">
+</head>
+<body>
+  <div id="app">
+
+    <!-- Top Toolbar -->
+    <div class="toolbar-top" id="toolbar-top">
+      <span class="toolbar-top-title">NC Web</span>
+      <div class="toolbar-top-actions">
+        <button class="btn-top" id="btn-open-left" title="Open directory in left panel">
+          <span class="btn-icon">&#x1F4C2;</span>
+          <span class="btn-label">Open Left...</span>
+        </button>
+        <button class="btn-top" id="btn-open-right" title="Open directory in right panel">
+          <span class="btn-icon">&#x1F4C2;</span>
+          <span class="btn-label">Open Right...</span>
+        </button>
+        <button class="btn-top" id="btn-help" title="Help">
+          <span class="btn-icon">?</span>
+          <span class="btn-label">Help</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Dual Panels -->
+    <div class="panels-container" id="panels-container">
+
+      <!-- Left Panel -->
+      <div class="panel panel-left active-panel" id="left-panel">
+        <div class="breadcrumb" data-panel="left"></div>
+        <div class="file-list-header" data-panel="left">
+          <span class="col-header col-name" data-sort="name" data-panel="left">Name</span>
+          <span class="col-header col-ext" data-sort="ext" data-panel="left">Ext</span>
+          <span class="col-header col-size" data-sort="size" data-panel="left">Size</span>
+          <span class="col-header col-date" data-sort="date" data-panel="left">Date</span>
+        </div>
+        <div class="file-list" data-panel="left" tabindex="0"></div>
+      </div>
+
+      <!-- Right Panel -->
+      <div class="panel panel-right" id="right-panel">
+        <div class="breadcrumb" data-panel="right"></div>
+        <div class="file-list-header" data-panel="right">
+          <span class="col-header col-name" data-sort="name" data-panel="right">Name</span>
+          <span class="col-header col-ext" data-sort="ext" data-panel="right">Ext</span>
+          <span class="col-header col-size" data-sort="size" data-panel="right">Size</span>
+          <span class="col-header col-date" data-sort="date" data-panel="right">Date</span>
+        </div>
+        <div class="file-list" data-panel="right" tabindex="0"></div>
+      </div>
+
+    </div>
+
+    <!-- Status Bar -->
+    <div class="status-bar" id="status-bar">
+      <span class="status-left" id="status-left">0 files</span>
+      <span class="status-center" id="status-center"></span>
+      <span class="status-right" id="status-right">File System API</span>
+    </div>
+
+    <!-- Bottom F-Key Toolbar -->
+    <div class="toolbar" id="toolbar">
+      <button class="toolbar-btn" data-key="F1"><span class="toolbar-key">1</span><span class="toolbar-label">Help</span></button>
+      <button class="toolbar-btn" data-key="F2"><span class="toolbar-key">2</span><span class="toolbar-label">Rename</span></button>
+      <button class="toolbar-btn" data-key="F3"><span class="toolbar-key">3</span><span class="toolbar-label">View</span></button>
+      <button class="toolbar-btn" data-key="F4"><span class="toolbar-key">4</span><span class="toolbar-label">Edit</span></button>
+      <button class="toolbar-btn" data-key="F5"><span class="toolbar-key">5</span><span class="toolbar-label">Copy</span></button>
+      <button class="toolbar-btn" data-key="F6"><span class="toolbar-key">6</span><span class="toolbar-label">Move</span></button>
+      <button class="toolbar-btn" data-key="F7"><span class="toolbar-key">7</span><span class="toolbar-label">MkDir</span></button>
+      <button class="toolbar-btn" data-key="F8"><span class="toolbar-key">8</span><span class="toolbar-label">Delete</span></button>
+      <button class="toolbar-btn" data-key="F9"><span class="toolbar-key">9</span><span class="toolbar-label">Menu</span></button>
+      <button class="toolbar-btn" data-key="F10"><span class="toolbar-key">10</span><span class="toolbar-label">Quit</span></button>
+    </div>
+
+    <!-- Mobile Tab Switcher -->
+    <div class="mobile-tabs" id="mobile-tabs">
+      <button class="mobile-tab active" data-tab="left">Left</button>
+      <button class="mobile-tab" data-tab="right">Right</button>
+    </div>
+
+    <!-- Dialog Overlay -->
+    <div id="dialog-overlay" class="dialog-overlay hidden">
+      <div class="dialog">
+        <div class="dialog-title" id="dialog-title"></div>
+        <div class="dialog-body" id="dialog-body"></div>
+        <div class="dialog-buttons" id="dialog-buttons"></div>
+      </div>
+    </div>
+
+    <!-- Editor Overlay -->
+    <div id="editor-overlay" class="editor-overlay hidden">
+      <div class="editor-header">
+        <span class="editor-filename" id="editor-filename"></span>
+        <span class="editor-info" id="editor-info"></span>
+        <div class="editor-actions">
+          <button class="btn-editor" id="editor-save" title="Save">Save</button>
+          <button class="btn-editor" id="editor-close" title="Close">Close</button>
+        </div>
+      </div>
+      <div class="editor-content" id="editor-content"></div>
+    </div>
+
+    <!-- Context Menu -->
+    <div id="context-menu" class="context-menu hidden">
+      <div class="context-menu-items" id="context-menu-items"></div>
+    </div>
+
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

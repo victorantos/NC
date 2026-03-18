@@ -1,0 +1,103 @@
+/* =========================================================
+   layout.css — Core layout grid for NC Web
+   ========================================================= */
+
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  background-color: var(--nc-bg);
+  font-family: var(--nc-font);
+  font-size: var(--nc-font-size);
+  line-height: var(--nc-line-height);
+  color: var(--nc-text-bright);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── App grid ──────────────────────────────────────────── */
+
+#app {
+  display: grid;
+  grid-template-rows: auto 1fr auto auto;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+/* ── Dual-pane container ───────────────────────────────── */
+
+.panels-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--nc-panel-gap);
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* ── Individual panel ──────────────────────────────────── */
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: var(--nc-border-width) solid var(--nc-border);
+  border-radius: var(--nc-radius);
+  min-height: 0;
+  background-color: var(--nc-bg);
+}
+
+/* ── File listing scroll area ──────────────────────────── */
+
+.file-list {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 0;
+  outline: none;
+}
+
+/* ── Mobile tabs (hidden on desktop) ───────────────────── */
+
+.mobile-tabs {
+  display: none;
+}
+
+/* ── Scrollbar theming (Webkit) ────────────────────────── */
+
+.file-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.file-list::-webkit-scrollbar-track {
+  background: var(--nc-bg);
+}
+
+.file-list::-webkit-scrollbar-thumb {
+  background: var(--nc-scrollbar);
+  border-radius: 0;
+}
+
+.file-list::-webkit-scrollbar-thumb:hover {
+  background: var(--nc-highlight);
+}
+
+/* Firefox */
+.file-list {
+  scrollbar-width: thin;
+  scrollbar-color: var(--nc-scrollbar) var(--nc-bg);
+}
+
+/* ── Editor / dialog scrollbar ─────────────────────────── */
+
+.editor-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.editor-content::-webkit-scrollbar-track {
+  background: var(--nc-editor-bg);
+}
+
+.editor-content::-webkit-scrollbar-thumb {
+  background: var(--nc-scrollbar);
+}

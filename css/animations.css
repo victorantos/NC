@@ -1,0 +1,69 @@
+/* =========================================================
+   animations.css — NC Web transitions and keyframes
+   ========================================================= */
+
+/* ── Keyframes ─────────────────────────────────────────── */
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0); }
+}
+
+/* ── Dialog entrance ───────────────────────────────────── */
+
+.dialog-overlay:not(.hidden) .dialog {
+  animation: slideUp 200ms ease;
+}
+
+/* ── Editor entrance ───────────────────────────────────── */
+
+.editor-overlay:not(.hidden) {
+  animation: fadeIn 150ms ease;
+}
+
+/* ── Context menu entrance ─────────────────────────────── */
+
+.context-menu:not(.hidden) {
+  animation: fadeIn 100ms ease;
+}
+
+/* ── Panel slide transitions (mobile) ──────────────────── */
+
+.panel {
+  transition: transform var(--nc-transition);
+}
+
+/* ── File entry selection transition ───────────────────── */
+
+.file-entry {
+  transition: background-color 60ms ease;
+}
+
+/* ── Reduced motion ────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
