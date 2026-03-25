@@ -1,4 +1,4 @@
-const CACHE_NAME = 'nc-web-v1';
+const CACHE_NAME = 'nc-web-__GIT_HASH__';
 const ASSETS = [
   '/',
   '/index.html',
